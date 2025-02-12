@@ -26,17 +26,20 @@ console.log(getComputerChoice());
 
 
 function playRound(humanChoice, computerChoice) {
-    if (humanChoice === "rock" && computerChoice === "paper") {
-        return true; 
-    } else if (humanChoice === "rock" && computerChoice === "scissor") {
-        return false;
+    if (humanChoice === computerChoice) {
+        console.log("It's a tie!");
+    } else if (humanChoice === "rock" && computerChoice === "scissor" ||
+               humanChoice === "paper" && computerChoice === "rock" ||
+               humanChoice === "scissor" && computerChoice === "paper")  {
+               humanScore += 1; 
+               console.log("You win!", humanScore);
     } else {
-        return null;
+        computerScore += 1;
+        console.log("You loose!", computerScore);
     }
-
 }
-
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
-console.log(playRound(humanSelection, computerSelection));
+playRound(humanSelection, computerSelection);
+    
