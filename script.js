@@ -1,3 +1,6 @@
+let humanScore = 0;
+let computerScore = 0;
+
 function getComputerChoice(){
     const computerChoice = Math.random();
     if (computerChoice <= .33) {
@@ -20,3 +23,20 @@ function getHumanChoice() {
     )
 }
 console.log(getComputerChoice());
+
+
+function playRound(humanChoice, computerChoice) {
+    if (humanChoice === "rock" && computerChoice === "paper") {
+        return true; 
+    } else if (humanChoice === "rock" && computerChoice === "scissor") {
+        return false;
+    } else {
+        return null;
+    }
+
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+console.log(playRound(humanSelection, computerSelection));
