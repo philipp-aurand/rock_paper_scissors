@@ -1,7 +1,8 @@
 function getComputerChoice(){
-    if (Math.random() <= .33) {
+    const computerChoice = Math.random();
+    if (computerChoice <= .33) {
         return "rock";
-    } else if (Math.random() >= .33) {
+    } else if (computerChoice >= .33) {
         return "paper";
     } else {
         return "scissor";
@@ -9,8 +10,13 @@ function getComputerChoice(){
 } 
 console.log(getComputerChoice());
 
-function getHumanChoice() {
-    let humanChoice = prompt("Please enter rock, papper, scissor!");
 
+function getHumanChoice() {
+    const humanChoice = prompt("Please enter rock, papper, scissor!");
+    if (humanChoice === "rock" || "paper" || "scissor") {
+        return getHumanChoice;
+    } else (
+        alert("Invalid Choice! Enter rock, paper or scissor!")
+    )
 }
-getComputerChoice();
+console.log(getComputerChoice());
