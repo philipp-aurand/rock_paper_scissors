@@ -15,7 +15,7 @@ console.log(getComputerChoice());
 
 
 function getHumanChoice() {
-    const humanChoice = prompt("Please enter rock, papper, scissor!");
+    const humanChoice = prompt("Please enter rock, paper, scissor!");
     if (humanChoice === "rock" || "paper" || "scissor") {
         return getHumanChoice;
     } else (
@@ -40,6 +40,16 @@ function playRound(humanChoice, computerChoice) {
 }
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
+
+
+
+
+function playGame() {
+    for(let i = 1; i <= 5; i ++) {
+        playRound()
+    }
+}
+playGame();
 
 playRound(humanSelection, computerSelection);
     
