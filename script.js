@@ -41,15 +41,16 @@ function playRound(humanChoice, computerChoice) {
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
-
+playRound(humanSelection, computerSelection);
 
 
 function playGame() {
     for(let i = 1; i <= 5; i ++) {
-        playRound()
+        const humanSelection = getHumanChoice()
+        const computerSelection = getComputerChoice()
+        playRound(humanSelection, computerSelection);
+      
     }
 }
 playGame();
-
-playRound(humanSelection, computerSelection);
     
