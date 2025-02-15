@@ -52,9 +52,9 @@ function playGame() {
       
     } 
     if (humanScore > computerScore) {
-        console.log("You Win!")
+        console.log("You win the best of 5 series!")
     } else {
-        console.log("You Loose:(")
+        console.log("You Loose the series:(")
     }
 }
 playGame();
