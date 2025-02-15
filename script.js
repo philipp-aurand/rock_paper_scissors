@@ -31,10 +31,10 @@ function playRound(humanChoice, computerChoice) {
     } else if (humanChoice === "rock" && computerChoice === "scissor" ||
                humanChoice === "paper" && computerChoice === "rock" ||
                humanChoice === "scissor" && computerChoice === "paper")  {
-               humanScore += 1; 
+               humanScore++; 
                console.log("You win!", humanScore);
     } else {
-        computerScore += 1;
+        computerScore++ ;
         console.log("You loose!", computerScore);
     }
 }
@@ -46,10 +46,15 @@ playRound(humanSelection, computerSelection);
 
 function playGame() {
     for(let i = 1; i <= 5; i ++) {
-        const humanSelection = getHumanChoice()
-        const computerSelection = getComputerChoice()
-        playRound(humanSelection, computerSelection);
+       const humanSelection = getHumanChoice();
+       const computerSelection = getComputerChoice();
+       playRound(humanSelection, computerSelection);
       
+    } 
+    if (humanScore > computerScore) {
+        console.log("You Win!")
+    } else {
+        console.log("You Loose:(")
     }
 }
 playGame();
