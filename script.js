@@ -11,11 +11,11 @@ function getComputerChoice(){
         return "scissor";
     }
 } 
-console.log("The Computer plays:", getComputerChoice());
+/* console.log("The Computer plays:", getComputerChoice()); */
 
-const humanChoice = prompt("Please enter rock, paper, scissor!");
+
 function getHumanChoice() {
-    
+    const humanChoice = prompt("Please enter rock, paper, scissor!");
     if (humanChoice === "rock" || humanChoice === "paper" || humanChoice === "scissor") {
         return humanChoice;
     } else {
@@ -23,37 +23,40 @@ function getHumanChoice() {
         return getHumanChoice();
     }
 }
-console.log("You played:", getComputerChoice());
+/* console.log("You played:", getComputerChoice()); */
 
 
 function playRound(humanChoice, computerChoice) {
+      
     if (humanChoice === computerChoice) {
         console.log("It's a tie!");
     } else if (humanChoice === "rock" && computerChoice === "scissor" ||
                humanChoice === "paper" && computerChoice === "rock" ||
                humanChoice === "scissor" && computerChoice === "paper")  {
                humanScore++; 
-               console.log("You win this round!", humanScore);
+               console.log("You win this round! Your socore is:", humanScore);
     } else {
         computerScore++ ;
-        console.log("You loose this round!", computerScore);
+        console.log("You loose this round! The compouter score is:", computerScore);
     }
 }
-const humanSelection = getHumanChoice();
+/*const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
-playRound(humanSelection, computerSelection);
+playRound(humanSelection, computerSelection); */
 
 
 function playGame() {
     for(let i = 1; i <= 5; i ++) {
        const humanSelection = getHumanChoice();
        const computerSelection = getComputerChoice();
+       console.log("You played: ", humanSelection); 
+       console.log("Computer played:", computerSelection);
        playRound(humanSelection, computerSelection);
-      
+     
     } 
-
-    console.log(`The final score is - You: ${humanScore}, Computer: ${computerScore},`);
+    
+    console.log(`The final score of this rps series is - You: ${humanScore}, Computer: ${computerScore},`);
     if (humanScore > computerScore) {
         console.log("You win the best of 5 series!")
     } else if (humanScore < computerScore) {
