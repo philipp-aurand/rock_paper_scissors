@@ -11,11 +11,11 @@ function getComputerChoice(){
         return "scissor";
     }
 } 
-console.log(getComputerChoice());
+console.log("The Computer plays:", getComputerChoice());
 
-
+const humanChoice = prompt("Please enter rock, paper, scissor!");
 function getHumanChoice() {
-    const humanChoice = prompt("Please enter rock, paper, scissor!");
+    
     if (humanChoice === "rock" || humanChoice === "paper" || humanChoice === "scissor") {
         return humanChoice;
     } else {
@@ -23,7 +23,7 @@ function getHumanChoice() {
         return getHumanChoice();
     }
 }
-console.log(getComputerChoice());
+console.log("You played:", getComputerChoice());
 
 
 function playRound(humanChoice, computerChoice) {
@@ -33,10 +33,10 @@ function playRound(humanChoice, computerChoice) {
                humanChoice === "paper" && computerChoice === "rock" ||
                humanChoice === "scissor" && computerChoice === "paper")  {
                humanScore++; 
-               console.log("You win the match!", humanScore);
+               console.log("You win this round!", humanScore);
     } else {
         computerScore++ ;
-        console.log("You loose the match!", computerScore);
+        console.log("You loose this round!", computerScore);
     }
 }
 const humanSelection = getHumanChoice();
