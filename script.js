@@ -17,7 +17,7 @@ console.log(getComputerChoice());
 function getHumanChoice() {
     const humanChoice = prompt("Please enter rock, paper, scissor!");
     if (humanChoice === "rock" || "paper" || "scissor") {
-        return getHumanChoice;
+        return humanChoice;
     } else (
         alert("Invalid Choice! Enter rock, paper or scissor!")
     )
